@@ -1,0 +1,119 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Witchy color palette */
+  --background: #0d0a1a;
+  --foreground: #e8d5ff;
+  --card: #1a1428;
+  --card-foreground: #e8d5ff;
+  --popover: #1a1428;
+  --popover-foreground: #e8d5ff;
+  --primary: #c9a84c;
+  --primary-foreground: #0d0a1a;
+  --secondary: #2d1b69;
+  --secondary-foreground: #e8d5ff;
+  --muted: #1a1428;
+  --muted-foreground: #a89bc2;
+  --accent: #1a3a2a;
+  --accent-foreground: #e8d5ff;
+  --destructive: #8b2635;
+  --destructive-foreground: #e8d5ff;
+  --border: rgba(45, 27, 105, 0.4);
+  --input: rgba(45, 27, 105, 0.3);
+  --ring: #c9a84c;
+  --radius: 0.625rem;
+  
+  /* Custom witchy tokens */
+  --purple: #2d1b69;
+  --forest: #1a3a2a;
+  --gold: #c9a84c;
+  --lavender: #e8d5ff;
+}
+
+@theme inline {
+  --font-sans: 'Crimson Text', 'Georgia', serif;
+  --font-serif: 'Cinzel', 'Times New Roman', serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom colors */
+  --color-purple: var(--purple);
+  --color-forest: var(--forest);
+  --color-gold: var(--gold);
+  --color-lavender: var(--lavender);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes */
+.font-heading {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--purple);
+  color: var(--lavender);
+}
